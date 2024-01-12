@@ -16,7 +16,7 @@ def get_source_branch(){
     withCredentials([
         usernamePassword(credentialsId: env.GIT_CREDENTIAL_ID, passwordVariable: 'PAT', usernameVariable: 'USER')
     ]) {
-        return GitHub.connectToEnterprise(ghUrl, PAT).getRepository("${env.ORG_NAME}/${env.REPO_NAME}")
+        return GitHub.connectToEnterpriseWithOAuth(ghUrl, USER, PAT).getRepository("${env.ORG_NAME}/${env.REPO_NAME}")
             .getPullRequest(env.CHANGE_ID.toInteger())
             .getHead()
             .getRef()
