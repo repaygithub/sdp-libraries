@@ -22,6 +22,7 @@ void call(Map args = [:], body){
   // do nothing if target branch doesnt match
   if (args.to)
   if (!(target_branch ==~ (~args.to) ))// convert string to regex
+    println "Branches did not match"
     return
 
   println "running because of a PR from ${source_branch} to ${target_branch}"
