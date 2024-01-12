@@ -16,12 +16,12 @@ void call(Map args = [:], body){
 
   // do nothing in source branch doesn't match
   if (args.from)
-  if (!(source_branch ==~ (~args.from) ))// convert string to regex
+  if (!(source_branch ==~ (args.from) ))// convert string to regex
     return
 
   // do nothing if target branch doesnt match
   if (args.to)
-  if (!(target_branch ==~ (~args.to) ))// convert string to regex
+  if (!(target_branch ==~ (args.to) ))// convert string to regex
     println "Branches did not match"
     return
 
