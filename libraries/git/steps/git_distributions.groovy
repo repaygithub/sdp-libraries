@@ -65,7 +65,7 @@ void init_env(){
         if (env.GIT_BUILD_CAUSE == "merge")
         if (on_merge.get_merged_from() == null) {
           println "Source branch may have been deleted.  Falling back to commit."
-          env.GIT_BUILD_CAUSE == "commit"
+          env.GIT_BUILD_CAUSE = "commit"
         }
 
         println "Found Git Build Cause: ${env.GIT_BUILD_CAUSE}"
