@@ -27,7 +27,7 @@ void call(Map args = [:], body){
   if (args.to)
   if (!(target_branch ==~ args.to))
     return
-
+  println source_branch
   def mergedFrom = source_branch.join(", ")
   // grammar essentially, remove oxford comma to follow git syntax
   if(mergedFrom.contains(", ")) {
