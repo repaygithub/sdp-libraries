@@ -18,6 +18,7 @@ void call(Map args = [:], body){
 
   // If there are no source branches, this wasn't a merge
   if (!source_branch)
+    println "Source branch not found. It may have been deleted."
     return
 
   // do nothing if source branch doesn't match
