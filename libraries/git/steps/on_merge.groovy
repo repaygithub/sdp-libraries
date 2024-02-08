@@ -15,7 +15,7 @@ void call(Map args = [:], body){
 
   def source_branch = get_merged_from()
   def target_branch = env.BRANCH_NAME
-
+  println source_branch
   // do nothing if source branch doesn't match
   if (args.from)
   if (!source_branch.collect{ it ==~ args.from}.contains(true))
@@ -70,8 +70,6 @@ String get_merged_from(){
       if(!branch.contains("^"))
         branchNames.add(branch)
     }
-
-    println branchNames
     return branchNames
   }
 }
