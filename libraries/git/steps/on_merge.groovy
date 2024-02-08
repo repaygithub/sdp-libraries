@@ -7,8 +7,6 @@ package libraries.git.steps
 
 void call(Map args = [:], body){
 
-  println(args)
-
   // do nothing if not merge
   if (!env.GIT_BUILD_CAUSE.equals("merge"))
     return
