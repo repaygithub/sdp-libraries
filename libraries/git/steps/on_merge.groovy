@@ -70,6 +70,8 @@ String get_merged_from(){
       if(!branch.contains("^"))
         branchNames.add(branch)
     }
+
+    println branchNames
     return branchNames
   }
 }
