@@ -16,11 +16,6 @@ void call(Map args = [:], body){
   def source_branch = get_merged_from()
   def target_branch = env.BRANCH_NAME
 
-  // If there are no source branches, this wasn't a merge
-  if (!source_branch)
-    println "Source branch not found. It may have been deleted."
-    return
-
   // do nothing if source branch doesn't match
   if (args.from)
   if (!source_branch.collect{ it ==~ args.from}.contains(true))
