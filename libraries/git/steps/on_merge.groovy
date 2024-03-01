@@ -43,6 +43,7 @@ String get_merged_from(){
     // update remote for git name-rev to properly work
     def remote = env.GIT_URL
     def cred_id = env.GIT_CREDENTIAL_ID
+    println("Credentials ${cred_id}")
     withCredentials([usernamePassword(credentialsId: cred_id, passwordVariable: 'PASS', usernameVariable: 'USER')]){
         remote = remote.replaceFirst("://", "://${USER}:${PASS}@")
         sh "git remote rm origin"
